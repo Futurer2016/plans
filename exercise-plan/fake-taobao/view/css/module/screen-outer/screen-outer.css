@@ -1,0 +1,135 @@
+.screen-outer {
+    height: 632px;
+}
+.screen-outer .main {
+    width: 900px;
+}
+.screen-outer .col-right {
+    width: 290px;
+}
+.screen-outer .main .menu-bar {
+    border: 1px solid #f50;
+    padding-top: 5px;
+    padding-bottom: 3px;
+    width: 189px;
+}
+.screen-outer .main .main-menu {
+    position: absolute;
+    width: 190px;
+}
+.screen-outer .main .menu-bar .a-all {
+    position: relative;
+    line-height: 32px;
+    width: 145px;
+    padding-left: 25px;
+    padding-right: 18px;
+}
+.screen-outer .main .menu-bar .a-all::after {
+    right: 15px;
+}
+.screen-outer .main .menu-bar .a-all:hover {
+    background-color: #ffe4dc;
+}
+.screen-outer .main .menu-bar .a-all a {
+    font-size: 14px;
+}
+.screen-outer .main .menu-bar .a-all a:hover {
+    color: #ff5000;
+    text-decoration: underline;
+}
+.screen-outer .main .main-center {
+    margin-left: 190px;
+}
+/* 上面的轮播 */
+.screen-outer .main .main-center .main-slider {
+    float: left;
+    margin: 10px 0 0 10px;
+}
+.screen-outer .main .main-center .main-slider > .slider {
+    width: 520px;
+    height: 280px;
+    overflow: hidden;
+}
+.screen-outer .main .main-center .main-slider .slider .slider-list {
+    width: 1560px;
+}
+.screen-outer .main .main-center .main-slider .slider a {
+    float: left;
+}
+/* 天猫轮播 */
+.screen-outer .main .main-center .main-slider .tmall-slider {
+    width: 520px;
+}
+.tmall-slider .tmall-head {
+    position: relative;
+    border-bottom: 3px solid #ff1648;
+    padding-top: 11px;
+    width: 520px;
+}
+.tmall-slider .tmall-head span:first-child {
+    position: absolute;
+    display: inline-block;
+    height: 19px;
+    width: 136px;
+    background-size: 122px 22px;
+    background-repeat: no-repeat;
+    background-position: 2px 0;
+}
+.tmall-slider .tmall-head span:last-child {
+    margin-left: 136px;
+}
+.tmall-slider .slider {
+    width: 520px;
+    overflow: hidden;
+}
+.tmall-slider .slider .slider-list {
+    /* transform: translateX(-520px); */
+}
+.tmall-slider .slider .slider-list .slider-items {
+    float: left;
+    width: 520px;
+    background-color: #fff;
+}
+.tmall-slider .slider .slider-list .slider-items.col-2 a {
+    margin-left: 6px;
+    margin-top: 6px;
+}
+.tmall-slider .slider .slider-list .slider-items.col-2 a img {
+    width: 251px;
+    height: 190px;
+}
+.tmall-slider .slider .slider-list .slider-items.col-4 a {
+    border-right: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    padding: 5px 0;
+    width: 129px;
+    height: 57px;
+    text-align: center;
+    background-color: #fff;
+}
+.tmall-slider .slider .slider-list .slider-items.col-4 a img {
+    margin-top: 10px;
+    width: 84px;
+    height: 42px;
+}
+.tmall-slider .slider .slider-list {
+    width: 1560px;
+}
+.tmall-slider .slider .slider-list a {
+    float: left;
+}
+/* slider right img */
+.main-right {
+    float: right;
+    margin: 10px 10px 0 0;
+}
+.main-right .tmall-right .tmall-right-title {
+    display: block;
+    padding-top: 6px;
+    line-height: 24px;
+}
+/* 淘宝头条 */
+.main .main-bottom {
+    margin-top: 10px;
+    padding: 14px 14px 12px 20px;
+}

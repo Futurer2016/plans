@@ -1,0 +1,92 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+html, body{
+    width: 100%;
+}
+
+a {
+    color: #6c6c6c;
+    text-decoration: none;
+}
+/* 浮动 */
+.fl {
+    float: left;
+}
+.fr {
+    float: right;
+}
+/* 清除 float 通用方式 */
+.clear-float::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+/* 定位 */
+.pr {
+    position: relative;
+}
+.pa {
+    position: absolute;
+}
+/* 标签后面的向下镂空符号 */
+.arrow-down::after {
+    content: "";
+    position: absolute;
+    box-sizing: border-box;
+    width: 4px;
+    height: 4px;
+    border-bottom: 1px solid #8c8c8c;
+    border-right: 1px solid #8c8c8c;
+    transform-origin: 2px 2px;
+    transform: rotate(45deg);
+}
+/* 上 */
+.arrow-top::after {
+    transform: rotate(225deg);
+}
+/* 右 */
+.arrow-right::after {
+    transform: rotate(-45deg);
+}
+/* 左 */
+.arrow-left::after {
+    transform: rotate(135deg);
+}
+.arrow-down > .pa {
+    display: none;
+}
+.arrow-down:hover > .pa {
+    display: block;
+}
+/* 标签后面的向下填充符号 */
+.arrow-fill-down::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-top: 4px solid #8c8c8c;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+}
+/* 上 */
+.arrow-fill-top::after {
+    transform: rotate(90deg);
+}
+/* 右 */
+.arrow-fill-right::after {
+    transform: rotate(90deg);
+}
+/* 左 */
+.arrow-fill-left::after {
+    transform: rotate(90deg);
+}
+.arrow-fill-down > .pa {
+    display: none;
+}
+.arrow-fill-down:hover > .pa {
+    display: block;
+}

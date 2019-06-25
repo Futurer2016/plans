@@ -1,0 +1,23 @@
+* {
+    color: #3c3c3c;
+    font-family: Arial;
+    font-size: 10px;
+}
+body, .container {
+    background-color: #f4f4f4;
+    width: 100%;
+}
+.container-m {
+    margin: 0 auto;
+    width: 1190px;
+    /* border: 1px solid #000; */
+}
+/* 列表动态效果 */
+.list-item {
+    white-space: nowrap;
+    padding: 0 6px;
+    background-color: #fff;
+}
+.list-item:hover {
+    background-color: #eee;
+}

@@ -1,0 +1,146 @@
+.cup {
+    height: 130px;
+}
+.cup-content {
+    padding-top: 24px;
+    height: 97px;
+    background-color: #fff;
+}
+.logo, 
+.search-container,
+.t-618 {
+    float: left;
+}
+.logo {
+    width: 190px;
+}
+.taobao-logo {
+    display: block;
+    overflow: hidden;
+    width: 142px;
+    height: 0;
+    padding-top: 58px;
+    background-image: url(../../../img/taobao-logo.png);
+    background-size: 142px 58px;
+    background-repeat: no-repeat;
+}
+/* 搜索内容切换 */
+.search-tab {
+    padding-left: 20px;
+}
+.search-tab ul li {
+    box-sizing: border-box;
+    margin-right: 4px;
+    padding: 2px 8px;
+    text-align: center;
+    color: #f40;
+}
+.search-tab ul li.over {
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    font-weight: 700;
+    color: #fff;
+    background-image: linear-gradient(to right, #ff9000, #ff5000);
+}
+.search-tab ul li:hover {
+    background-color: #ffeee5;
+}
+/* 搜索条 */
+.search-panel {
+    position: relative;
+}
+.search-wrapper {
+    position: relative;
+    margin-right: 74px;
+    overflow: hidden;
+    box-sizing: border-box;
+    border: 2px solid #f50;
+    height: 40px;
+    border-right: none;
+    border-radius: 20px 0 0 20px;
+}
+.search-wrapper .search-inp {
+    border: none;
+    padding: 6px 0;
+    width: 472px;
+    height: 24px;
+    background-color: #fff;
+    text-indent: 10px;
+    outline: none;
+}
+.search-wrapper .search-camera {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    margin-top: -12px;
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    background-image: url(../../../img/camera.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 24px 24px;
+}
+.search-btn {
+    position: absolute;
+    right: 0;
+    top: 0;
+    border: none;
+    outline: none;
+    border-radius: 0 20px 20px 0;
+    width: 74px;
+    height: 40px;
+    background-image: linear-gradient(to right,#ff9000 0,#ff5000 100%);
+    font-size: 18px;
+    font-weight: 700;
+    color: #fff;
+    cursor: pointer;
+}
+/* 搜索条下面的快捷选项 */
+.quick-list {
+    padding: 5px 41px 0 0;
+    height: 20px;
+    overflow: hidden;
+}
+.quick-list a {
+    white-space: nowrap;
+    margin-right: 4px;
+}
+.quick-list a.h,
+.quick-list a:hover {
+    color: #f50;
+}
+.t-618 {
+    position: absolute;
+    top: 0;
+    right: 110px;
+}
+.t-618 a.taobao-app {
+    display: block;
+    margin-left: 0px;
+    border: 1px solid #ccc;
+    width: 74px;
+    height: 88px;
+    text-align: center;
+    background-color: #fff;
+}
+.t-618 a.taobao-app .app-title {
+    margin: 4px auto 0;
+    width: 78px;
+    line-height: 20px;
+    text-align: center;
+    color: #f40;
+}
+.t-618 a img {
+    display: block;
+    width: 62px;
+    height: 62px;
+    margin-left: 6px;
+}
+.t-618 a.close {
+    display: block;
+    border: 1px solid #ccc;
+    width: 15px;
+    line-height: 15px;
+    text-align: center;
+}

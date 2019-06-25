@@ -1,0 +1,32 @@
+.nav {
+    height: 30px;
+    background-image: linear-gradient(to right,#ff9000 0,#ff5000 100%);
+}
+.nav h2 {
+    width: 190px;
+    line-height: 30px;
+    font-size: 16px;
+    text-align: center;
+    color: #fff;
+    background-color: #ff5000;
+}
+.nav ul li {
+    position: relative;
+}
+.nav ul li a {
+    line-height: 30px;
+    font-size: 16px;
+    text-align: center;
+    color: #fff;
+}
+.nav ul li:not(.split):hover::before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    margin-left: -12px;
+    width: 25px;
+    height: 15px;
+    background-image: url(../../../img/taobao-head.png);
+    background-size: 25px 15px;
+}
