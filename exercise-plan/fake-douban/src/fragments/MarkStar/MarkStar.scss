@@ -1,0 +1,40 @@
+.score-star {
+  display: inline-block;
+  width: 55px;
+  height: 11px;
+  background-image: url(./../../assets/img/fragments/MarkStar/stars.png);
+  background-repeat: no-repeat;
+  &.score50 {
+    background-position: 0 0;
+  }
+  &.score45 {
+    background-position: 0 -11px;
+  }
+  &.score40 {
+    background-position: 0 -22px;
+  }
+  &.score35 {
+    background-position: 0 -33px;
+  }
+  &.score30 {
+    background-position: 0 -44px;
+  }
+  &.score25 {
+    background-position: 0 -55px;
+  }
+  &.score20 {
+    background-position: 0 -66px;
+  }
+  &.score15 {
+    background-position: 0 -77px;
+  }
+  &.score10 {
+    background-position: 0 -88px;
+  }
+  &.score05 {
+    background-position: 0 -99px;
+  }
+  &.score00 {
+    background-position: 0 -101px;
+  }
+}

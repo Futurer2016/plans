@@ -1,0 +1,82 @@
+@charset "utf-8";
+
+body {
+  padding-top: 30px;
+}
+
+.head-nav {
+  margin: 0 auto 25px;
+  width: 950px;
+}
+.head-nav h1 {
+  display: inline-block;
+  margin-right: 20px;
+  width: 160px;
+  height: 34px;
+  overflow: hidden;
+  vertical-align: middle;
+  background-image: -webkit-image-set(url(./../../assets/img/HeadNav/logox1.png) 1x,  url(./../../assets/img/HeadNav/logox2.png) 2x);
+  background-repeat: no-repeat;
+}
+.head-nav h1 a {
+  display: block;
+  height: 100%;
+  line-height: 10em;
+}
+.head-nav .nav-search {
+  position: relative;
+  display: inline-block;
+  border: 1px solid #c3c3c3;
+  width: 270px;
+  height: 30px;
+  vertical-align: middle;
+}
+.head-nav .nav-search .inp input {
+  margin-right: 2px;
+  border: none;
+  padding: 5px;
+  width: 240px;
+  height: 20px;
+  font-size:  13px;
+}
+.head-nav .nav-search .inp input::placeholder {
+  color: #c3c3c3;
+}
+.head-nav .nav-search .btn {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 30px;
+  height: 30px;
+  background-image: url(./../../assets/img/HeadNav/btn_search.png);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.head-nav .nav-search .btn input {
+  border: none;
+  width: 30px;
+  height: 30px;
+  overflow: hidden;
+  font-size: 0;
+  color: transparent;
+  background: transparent;
+  cursor: pointer;
+}
+.head-nav .nav-list {
+  float: right;
+  margin-top: 6px;
+}
+.head-nav .nav-list li {
+  display: inline-block;
+  margin-left: 17px;
+  width: 40px;
+  height: 20px;
+  overflow: hidden;
+}
+.head-nav .nav-list li a {
+  display: block;
+  height: 100%;
+  line-height: 10em;
+  background-image: url(./../../assets/img/HeadNav/nav.png);
+  background-repeat: no-repeat;
+}

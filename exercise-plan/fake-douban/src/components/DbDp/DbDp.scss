@@ -1,0 +1,45 @@
+.db-dp {
+  .container {
+    .right-side {
+      .head-img {
+        display: block;
+        background-color: #fff;
+        img {
+          display: block;
+          width: 100%;
+          &:hover {
+            opacity: .8;
+          }
+        }
+      }
+      .my-db {
+        margin: 5px 0 30px;
+        font-size: 14px;
+      }
+    }
+    .main {
+      .u-list {
+        font-size: 16px;
+        .u-item {
+          float: left;
+          margin: 0 20px 30px 0;
+          .u-link {
+            margin-bottom: 10px;
+            background-color: #fff;
+            img {
+              width: 240px;
+              height: 220px;
+              &:hover {
+                opacity: .8;
+              }
+            }
+          }
+          .price {
+            float: right;
+            color: #E55457;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,307 @@
+@charset "utf-8";
+
+.db-sign {
+  margin-bottom: 25px;
+  background-color: #edf4ed;
+  background-image: url(./../../assets/img/SignIn/head-bg.jpg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: calc(50% - 305px) top;
+}
+.db-sign .container {
+  padding-bottom: 4px;
+}
+/* 登录注册 */
+.db-sign .container .sign-box {
+  float: right;
+  box-sizing: border-box;
+  padding: 10px;
+  width: 300px;
+  height: 300px;
+}
+.db-sign .container .sign-box .tab {
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+/* switch */
+.db-sign .container .sign-box .tab .qr-switch {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 30px;
+  height: 30px;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  cursor: pointer;
+}
+.db-sign .container .sign-box .tab .qr-switch.qr-quick {
+  background-image: url(./../../assets/img/SignIn/qr-quick.png);
+}
+.db-sign .container .sign-box .tab .qr-switch.qr-start {
+  background-image: url(./../../assets/img/SignIn/qr-start.png);
+}
+.db-sign .container .sign-box .tab .qr-switch::before {
+  content: "";
+  position: absolute;
+  right: 50px;
+  top: 0;
+  display: none;
+  margin-left: -300px;
+  border: 1px solid rgba(66,189,86,.3);
+  border-radius: 3px;
+  padding: 3px 5px;
+  color: #666;
+  background-color: #edf4ed;
+}
+.db-sign .container .sign-box .tab .qr-switch.qr-quick::before {
+  content: "扫码登录";
+}
+.db-sign .container .sign-box .tab .qr-switch.qr-start::before {
+  content: "短信登录/注册";
+}
+.db-sign .container .sign-box .tab .qr-switch::after {
+  content: "";
+  position: absolute;
+  right: 45px;
+  top: 8px;
+  display: none;
+  border-top: 1px solid rgba(66,189,86,.3);
+  border-right: 1px solid rgba(66,189,86,.3);
+  width: 10px;
+  height: 10px;
+  background-color: #edf4ed;
+  transform: rotate(45deg);
+}
+.db-sign .container .sign-box .tab .qr-switch:hover::before,
+.db-sign .container .sign-box .tab .qr-switch:hover::after {
+  display: block;
+}
+/* tab list */
+.db-sign .container .sign-box .tab .tab-list {
+  display: none;
+  margin-top: 20px;
+  border-bottom: 1px solid #ececec;
+  text-align: center;
+  font-size: 13px;
+}
+.db-sign .container .sign-box .tab .tab-list.active {
+  display: block;
+}
+.db-sign .container .sign-box .tab .tab-list li {
+  float: left;
+  box-sizing: border-box;
+  width: 50%;
+  line-height: 2;
+  color: #9b9b9b;
+  cursor: pointer;
+}
+.db-sign .container .sign-box .tab .tab-list li.on {
+  border-bottom: 1px solid;
+  font-weight: 600;
+  color: #333;
+}
+/* account and pwd sign */
+.db-sign .container .sign-box .tabcon-start {
+  position: relative;
+}
+/* tips */
+.db-sign .container .sign-box .tabcon-start .tips {
+  margin-bottom: 10px;
+  font-size: 12px;
+  color: #9b9b9b;
+}
+.db-sign .container .sign-box .tabcon-start .tips a {
+  color: #41ac52;
+}
+/* error msg */
+.db-sign .container .sign-box .tabcon-start .err-info {
+  position: absolute;
+  top: -60px;
+  display: none;
+  border: 1px solid  #ffb8b3;
+  padding-left: 20px;
+  width: 258px;
+  line-height: 22px;
+  color: #fe2617;
+  background-color: #fff6f1;
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg width='12' height='13' viewBox='0 0 12 13' xmlns='http://www.w3.org/2000/svg'%3E%3Cg transform='translate(1 1)' stroke='%23FE2617' fill='none' fill-rule='evenodd'%3E%3Ccircle cx='5.236' cy='5.417' r='5.236'/%3E%3Cpath d='M2.914 5.417h4.712' stroke-linecap='round'/%3E%3C/g%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-size: 12px;
+  background-position: 4px 4px;
+}
+.db-sign .container .sign-box .tabcon-start .err-info.show {
+  display: block;
+}
+/* tel */
+.db-sign .container .sign-box .tabcon-start .tel {
+  position: relative;
+  margin-bottom: 10px;
+}
+.db-sign .container .sign-box .tabcon-start .tel .tel-label {
+  display: none;
+}
+.db-sign .container .sign-box .tabcon-start .tel input {
+  box-sizing: border-box;
+  border: 1px solid #e4e6e5;
+  border-radius: 3px;
+  padding: 8px 40px 8px 60px;
+  width: 280px;
+  font-size: 13px;
+}
+.db-sign .container .sign-box .tabcon-start .tel .tel-area-code {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 50px;
+  height: 35px;
+  line-height: 35px;
+  text-align: center;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.db-sign .container .sign-box .tabcon-start .tel .tel-area-code span {
+  border-right: 1px solid #ececec;
+  padding: 0 10px;
+}
+/* tel code */
+.db-sign .container .sign-box .tabcon-start .tel-code {
+  position: relative;
+  margin-bottom: 10px;
+}
+.db-sign .container .sign-box .tabcon-start .tel-code .code-label {
+  display: none;
+}
+.db-sign .container .sign-box .tabcon-start .tel-code input {
+  box-sizing: border-box;
+  border: 1px solid #e4e6e5;
+  border-radius: 3px;
+  padding: 10px;
+  width: 280px;
+  height: 34px;
+  font-size: 13px;
+}
+.db-sign .container .sign-box .tabcon-start .tel-code .tel-code-btn {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 35px;
+  line-height: 35px;
+  text-align: center;
+  cursor: pointer;
+}
+.db-sign .container .sign-box .tabcon-start .tel-code .tel-code-btn {
+  padding: 0 10px;
+  font-size: 13px;
+  color: #41ac52;
+}
+.db-sign .container .sign-box .tabcon-start .sign-in-btn {
+  border-radius: 3px;
+  width: 280px;
+  height: 34px;
+  line-height: 35px;
+  font-size: 15px;
+  font-weight: 400;
+  text-align: center;
+  color: #fff;
+  background-color: rgba(66,189,86,.5);
+}
+.db-sign .container .sign-box .tabcon-start .sign-fit {
+  margin: 10px 0;
+}
+.db-sign .container .sign-box .tabcon-start .sign-fit .find-back {
+  float: right;
+  color: #41ac52;
+}
+/* 第三方登录 */
+.db-sign .container .sign-box .tabcon-start .other-sign-in {
+  border-top: 1px solid #ddd;
+  width: 250px;
+  padding-top: 10px;
+}
+.db-sign .container .sign-box .tabcon-start .other-sign-in span {
+  float: left;
+  font-size: 11px;
+  color: #9b9b9b;
+}
+.db-sign .container .sign-box .tabcon-start .other-sign-in ul{
+  overflow: hidden;
+}
+.db-sign .container .sign-box .tabcon-start .other-sign-in ul li {
+  float: left;
+}
+.db-sign .container .sign-box .tabcon-start .other-sign-in ul li a {
+  display: inline-block;
+  margin-left: 12px;
+  width: 22px;
+  height: 22px;
+  background-size: 22px;
+}
+
+/**********************************************************/
+/* app */
+.db-sign .container .app {
+  position: absolute;
+  left: 460px;
+  top: 50%;
+  margin-top: -60px;
+  margin-right: 40px;
+  height: 120px;
+}
+.db-sign .container .app h2 {
+  margin: 7px 0 25px;
+  font-size: 25px;
+  font-weight: normal;
+  color: #111;
+  line-height: 24px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizelegibility;
+}
+.db-sign .container .app h2 span {
+  margin-left: 10px;
+}
+.db-sign .container .app > a {
+  margin-right: 6px;
+  border-radius: 2px;
+  padding: 8px 21px;
+  font-size: 12px;
+  vertical-align: middle;
+  color: #fff;
+  background-color: #00b51d;
+}
+.db-sign .container .app .app-qr {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+}
+.db-sign .container .app .app-qr a {
+  display: block;
+  border: 1px solid #00b51d;
+  border-radius: 2px;
+}
+.db-sign .container .app .app-qr a img {
+  display: block;
+  width: 28px;
+  height: 28px;
+}
+.db-sign .container .app .app-qr .app-qr-expand {
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: none;
+  padding: 20px 20px 5px;
+  background-color: #fff;
+}
+.db-sign .container .app .app-qr .app-qr-expand img {
+  width: 150px;
+  height: 150px;
+}
+.db-sign .container .app .app-qr .app-qr-expand p {
+  margin: 13px 0;
+}
+
+.db-sign .container .app .app-qr:hover .app-qr-expand {
+  display: block;
+}

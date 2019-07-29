@@ -1,0 +1,42 @@
+@charset "utf-8";
+
+html {
+  color: #111;
+  background: #fff;
+}
+body {
+  font-family: Helvetica,Arial,sans-serif;
+  font-size: 13px;
+  line-height: 1.62;
+}
+/* 清除浮动 */
+.clearfix::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+/* 单行文本省略 */
+.ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+/* 按钮基本通用样式 */
+.bn-link {
+  display: inline-block;
+  padding: 2px 10px;
+  border-radius: 2px;
+  color: #fff;
+  background-color: #999a95;
+}
+/* 超链接默认样式 */
+a, a:link {
+  color: #37a;
+}
+/* a:visited {
+  color: #669;
+} */
+a:hover {
+  color: #fff;
+  background-color: #37a;
+}

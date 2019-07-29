@@ -1,0 +1,60 @@
+.db-team {
+  .container {
+    .left-side {
+      .u-list {
+        .u-item {
+          margin-top: 5px;
+          font-size: 14px;
+        }
+      }
+    }
+    .right-side {
+      .team-group {
+        margin-bottom: 2px;
+        h4 {
+          a {
+            font-size: 14px;
+            color: #333;
+          }
+        }
+      }
+      .u-list {
+        margin-left: -10px;
+        margin-bottom: 10px;
+        .u-item {
+          float: left;
+          margin-left: 10px;
+        }
+      }
+    }
+    .main {
+      .u-list {
+        .u-item {
+          float: left;
+          width: 248px;
+          font-size: 12px;
+          color: #999;
+          &:nth-child(2n) {
+            margin: 0 0 30px 30px;
+          }
+          .u-link {
+            float: left;
+            margin: 0 15px 10px 0;
+            img {
+              width: 48px;
+              height: 48px;
+            }
+          }
+          .team-name {
+            margin-bottom: 5px;
+            overflow: hidden;
+            font-size: 13px;
+          }
+          .team-member-count {
+            overflow: hidden;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,125 @@
+.db-music {
+  .container {
+    .left-side {
+      .section-title {
+        a {
+          color: #f38c00;
+        }
+      }
+      .u-list {
+        margin-bottom: 25px;
+        .u-item {
+          margin-top: 5px;
+          font-size: 14px;
+          .u-link {
+            color: #555d53;
+            .app-item {
+              display: block;
+              width: 50px;
+              height: 50px;
+              background-image: url(./../../assets/img/apps.jpg);
+              background-repeat: no-repeat;
+              background-position: 0 0;
+              border-radius: 10px;
+              box-shadow: 1px 1px 2px 0 #999;
+            }
+          }
+        }
+      }
+    }
+    .right-side {
+      .u-list {
+        .u-item {
+          margin-bottom: 8px;
+          padding-bottom: 8px;
+          font-size: 12px;
+          .num {
+            float: left;
+            margin-right: 10px;
+          }
+          .u-link {
+            position: relative;
+            float: left;
+            margin-right: 10px;
+            &:hover::before {
+              content: "";
+              position: absolute;
+              left: 15px;
+              right: 0;
+              top: 50%;
+              margin: -5px auto;
+              border: 5px solid transparent;
+              border-right-width: 10px;
+              border-left: 10px solid #fff;
+              width: 0;
+              height: 0;
+              z-index: 1;
+            }
+            img {
+              width:48px;
+              height: 48px;
+            }
+            &:hover::after {
+              content: "";
+              position: absolute;
+              left: 0;
+              top: 0;
+              right: 0;
+              bottom: 0;
+              background-color: rgba(0,0,0,.8);
+            }
+          }
+          .music-title-box {
+            overflow: hidden;
+          }
+          .music-school, .popular-count {
+            overflow: hidden;
+            color: #999;
+          }
+        }
+      }
+    }
+    .main {
+      .u-list {
+        margin-top: -40px;
+        margin-bottom: 20px;
+        .u-item {
+          display: inline-block;
+          margin-top: 40px;
+          width: 25%;
+          font-size: 12px;
+          vertical-align: top;
+          text-align: center;
+          .u-link {
+            margin: 0 auto 10px;
+            width: 80px;
+            img {
+              width: 80px;
+              height: 80px;
+            }
+          }
+        }
+      }
+      .hot-music-menu {
+        .u-item {
+          font-size: 13px;
+          .u-link {
+            position: relative;
+            &::after {
+              content: "";
+              position: absolute;
+              left: 0;
+              top: 0;
+              width: 100%;
+              height: 100%;
+              background-image: -webkit-image-set(url(./../../assets/img/DbMusic/player-coverx1.png) 1x, url(./../../assets/img/DbMusic/player-coverx2.png) 2x);
+              opacity: .8;
+              background-repeat: no-repeat;
+              background-position: center center;
+            }
+          }
+        }
+      }
+    }
+  }
+}

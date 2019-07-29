@@ -1,0 +1,16 @@
+.side-links {
+  ul {
+    li {
+      position: relative;
+      padding-right: 30px;
+      &.new-link::after {
+        content: "";
+        position: absolute;
+        right: 0;
+        top: 0;
+        background-image: url(./../../assets/img/fragments/LeftNav/new.gif);
+      }
+    }
+    
+  }
+}

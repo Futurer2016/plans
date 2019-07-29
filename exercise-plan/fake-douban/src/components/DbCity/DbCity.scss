@@ -1,0 +1,70 @@
+.db-city {
+  padding-bottom: 10px;
+  .container {
+    font-size: 12px;
+    a {
+      color: #643;
+    }
+    .left-side {
+      .section-title {
+        a {
+          color: #ec5303;
+        }
+      }
+      .u-list {
+        .u-item {
+          margin-top: 5px;
+          font-size: 14px;
+        }
+      }
+    }
+    .right-side {
+      .activity-group {
+        margin-bottom: 2px;
+        h4 {
+          a {
+            font-size: 14px;
+            color: #333;
+          }
+        }
+      }
+      .u-list {
+        margin-left: -10px;
+        margin-bottom: 10px;
+        .u-item {
+          float: left;
+          margin-left: 10px;
+        }
+      }
+    }
+    .main {
+      .u-list {
+        margin-left: -20px;
+        margin-top: -40px;
+        .u-item {
+          float: left;
+          margin-left: 20px;
+          margin-top: 40px;
+          width: 248px;
+          .u-link {
+            float: left;
+            margin: 0 10px 10px 0;
+            img {
+              width: 70px;
+              height: 90px;
+            }
+          }
+          .activity-desc {
+            overflow: hidden;
+            h4 {
+              font-size: 13px;
+            }
+            p {
+              color: #666;
+            }
+          }
+        }
+      }
+    }
+  }
+}
