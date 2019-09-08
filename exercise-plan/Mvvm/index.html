@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Mvvm Test</title>
+</head>
+<body>
+  <div id="app">
+    <div>
+      <label>
+        <input type="text" v-model="obj.firstName">
+      </label>
+    </div>
+
+    <div class="msg">
+      {{ message }}--{{ obj.firstName }}
+
+      <!-- {{ obj.name }} -->
+      <br>
+      <!-- {{ obj.name }} -->
+      <br>
+      <!-- {{ obj.name }} -->
+    </div>
+  </div>
+  <script src="./src/Watcher.js"></script>
+  <script src="./src/Observer.js"></script>
+  <script src="./src/Compile.js"></script>
+  <script src="./src/Mvvm.js"></script>
+  <script src="./src/index.js"></script>
+</body>
+</html>
