@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>stact context 测试</title>
+  <style>
+  .clearfix::after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+  .sort-map {
+    position: relative;
+    padding: 10px 50px 50px 30px;
+    max-width: 800px;
+    background-color: lightblue;
+  }
+  .sort-map::after {
+    content: "人眼方向";
+    width: 140px;
+    height: 40px;
+    text-indent: 3em;
+    line-height: 40px;
+    background-image: url(./img/eye-sight.png);
+    background-repeat: no-repeat;
+    background-size: 40px 40px;
+    transform: translateY(20px);
+  }
+  .z-axis {
+    position: relative;
+    float: left;
+    margin-right: 30px;
+    border: 2px solid;
+    width: 0;
+    height: 600px;
+  }
+  .z-axis::before {
+    content: "-∞";
+    position: absolute;
+    left: -10px;
+    top: -15px;
+    border: 10px solid transparent;
+    border-bottom: 10px solid #000;
+    width: 0;
+    height: 0;
+  }
+  .z-axis::after {
+    content: "+∞";
+    position: absolute;
+    left: -10px;
+    bottom: -15px;
+    border: 10px solid transparent;
+    border-top: 10px solid #000;
+    width: 0;
+    height: 0;
+  }
+  .z-zero {
+    position: absolute;
+    left: -2px;
+    top: 55%;
+    border: 2px solid #000;
+    width: 0;
+    height: 322px;
+    transform: translateY(-50%);
+  }
+  .z-zero::before {
+    content: "-0";
+    position: absolute;
+    left: 0;
+    top: 0;
+    border: 2px solid #000;
+    width: 5px;
+    height: 0;
+  }
+  .z-zero::after {
+    content: "+0";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    border: 2px solid #000;
+    width: 5px;
+    height: 0;
+  }
+  .sort-map .rule-desc {
+    overflow: hidden;
+  }
+  .sort-map .rule-desc ol {
+    list-style: none;
+    padding-left: 0;
+  }
+  .sort-map .rule-desc ol li {
+    display: flex;
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #008c8c;
+  }
+
+  .sort-map .rule-desc ol li p {
+    flex: 0 0 100px;
+    float: left;
+    margin: 0 10px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    color: #fff;
+    background-color: lightcoral;
+  }
+  .sort-map .rule-desc ol li p:last-child {
+    flex: 1 1;
+    line-height: 1.5;
+    min-width: 280px;
+  }
+  .sort-map .context-stack {
+    position: absolute;
+    left: 200px;
+    bottom: 50px;
+    border-radius: 10px;
+    padding: 10px;
+    color: #fff;
+    background-color: #008c8c;
+  }
+  </style>
+</head>
+<body>
+
+  <div class="sort-map clearfix">
+    <div class="z-axis" title="z坐标轴">
+      <div class="z-zero"></div>
+    </div>
+    <div class="rule-desc" title="规则描述">
+      <ol>
+        <li class="clearfix">
+          <p>z-index: -∞</p>
+          <p>堆叠层级1</p>
+          <p>创建堆叠上下文的元素的背景和边框</p>
+        </li>
+        <li class="clearfix">
+          <p>z-index: &lt; 0</p>
+          <p>堆叠层级2</p>
+          <p>堆叠级别为负值的堆叠上下文, 两个元素刻度相同时, 后面的覆盖前面的</p>
+        </li>
+        <li class="clearfix">
+          <p>z-index: auto</p>
+          <p>堆叠层级3</p>
+          <p>常规流非定位的块盒</p>
+        </li>
+        <li class="clearfix">
+          <p>z-index: auto</p>
+          <p>堆叠层级4</p>
+          <p>非定位的浮动盒子</p>
+        </li>
+        <li class="clearfix">
+          <p>z-index: auto</p>
+          <p>堆叠层级5</p>
+          <p>常规流非定位行盒</p>
+        </li>
+        <li class="clearfix">
+          <p>z-index: auto</p>
+          <p>堆叠层级6</p>
+          <p>任何 z-index 是 auto 的定位子元素，以及 z-index 是 0 的堆叠上下文</p>
+        </li>
+        <li class="clearfix">
+          <p>z-index: &gt; 0</p>
+          <p>堆叠层级7</p>
+          <p>堆叠级别为正值的堆叠上下文</p>
+        </li>
+      </ul>
+    </div>
+    <div class="context-stack">
+        每个堆叠上下文，独立于其他堆叠上下文，它们之间不能相互穿插。
+    </div>
+  </div>
+</body>
+</html>

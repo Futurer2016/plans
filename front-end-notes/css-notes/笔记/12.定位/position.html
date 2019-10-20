@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>position test</title>
+  <style>
+  .d1 {
+    border: 5px solid;
+    padding: 10px;
+    width: 1000px;
+    height: 400px;
+    background-color: lightblue;
+    background-clip: content-box;
+  }
+  .d2 {
+    border: 5px solid;
+    padding: 20px;
+    width: 500px;
+    height: 300px;
+  }
+  .d3 {
+    position: absolute;
+    right: 0;
+    width: 200px;
+    height: 100px;
+    color: #fff;
+    background-color: lightcoral;
+  }
+  .d4 {
+    position: absolute;
+    left: 100px;
+    right: 100px;
+    top: 100px;
+    bottom: 100px;
+    margin: auto;
+    width: 100px;
+    height: 100px;
+    background-color: #008c8c;
+  }
+  </style>
+</head>
+<body>
+  <div class="d1">
+    d1
+    <div class="d2">
+      d2
+      <div class="d3">d3 没有祖先元素定位，绝对定位相对于整个网页:html</div>
+    </div>
+  </div>
+  <div class="d4">d4 绝对定位居中</div>
+</body>
+</html>

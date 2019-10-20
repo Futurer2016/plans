@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>BFC的规避现象</title>
+  <style>
+  code {
+    border-radius: 3px;
+    background-color: #ddd;
+  }
+  .container {
+    margin: 10px;
+    width: 400px;
+    background-color:  lightblue;
+    overflow: hidden;
+  }
+  .container aside {
+    float: left;
+    margin: 10px;
+    height: 100px;
+    width: 100px;
+    text-align: center;
+    color: #eee;
+    background-color: lightcoral;
+  }
+  .container .main {
+    margin: 10px 20px;
+    padding: 10px;
+    height: 80px;
+    color: #eee;
+    background-color: #008c8c;
+  }
+  .oh {
+    overflow: hidden auto;
+  }
+  .fl {
+    float: left;
+  }
+  .pr {
+    position: relative;
+  }
+  .pa {
+    position: absolute;
+  }
+  .dib {
+    display: inline-block;
+  }
+  .dt {
+    display: table;
+  }
+  </style>
+</head>
+<body>
+  <h1>创建了BFC的元素，除(绝对定位absolute/固定定位fixed)元素外,它的边框盒 <code>border-box</code> 不会与浮动元素重叠</h1>
+  <h2>1. 利用overflow创建BFC, 实现两栏布局</h2>
+  <p>使用<code>overflow: hidden;</code>创建BFC的元素，它的边框盒不会与浮动元素重叠</p>
+  <div class="container">
+    <aside>
+      侧边栏
+    </aside>
+    <div class="main oh">
+      Lorem ipsum !
+    </div>
+  </div>
+  <div class="container">
+    <aside>
+      侧边栏
+    </aside>
+    <div class="main oh">
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptate quaerat nesciunt minima explicabo eaque autem consequuntur labore ab iure corporis cupiditate, nostrum est fugit minus a velit, sit quas rerum!
+    </div>
+  </div>
+  <h2>2. 利用浮动创建BFC</h2>
+  <p>两个都是浮动，完全按照浮动的规则排列, (显然，它的<code>margin-box</code>不会与浮动元素重叠), 盒子会适应内容</p>
+  <div class="container">
+    <aside>
+      侧边栏
+    </aside>
+    <div class="main fl">
+      Lorem ipsum 
+    </div>
+  </div>
+  <div class="container">
+    <aside>
+      侧边栏
+    </aside>
+    <div class="main fl">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi officia quibusdam odio expedita velit beatae necessitatibus ratione ullam, voluptate, tempora dolore? Maxime incidunt enim voluptates a expedita ipsum laudantium quidem.
+    </div>
+  </div>
+  <h2>3. 利用定位创建BFC</h2>
+  <p>绝对定位完全不会考虑浮动元素, 手动设置 <code>left: 110px;</code>进行补救, 但盒子会适应内容</p>
+  <div class="container pr">
+    <aside>
+      侧边栏
+    </aside>
+    <div class="main pa" style="left: 110px;">
+      Lorem ipsum .
+    </div>
+  </div>
+  <div class="container pr">
+    <aside>
+      侧边栏
+    </aside>
+    <div class="main pa" style="left: 110px;">
+      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nisi sed ipsam minima praesentium obcaecati dolorum hic in at facilis quia, eaque repudiandae tempora deleniti quibusdam enim consequuntur, laboriosam dolores maxime.
+    </div>
+  </div>
+  <h2>4. 利用行块盒创建BFC</h2>
+  <p>行块盒固有特性，它的<code>margin-box</code> 会避开浮动元素, 这里与BFC特性不谋而合, 但盒子会适应内容</p>
+  <div class="container">
+    <aside>
+      侧边栏
+    </aside>
+    <div class="main dib">
+      Lorem ipsum .
+    </div>
+  </div>
+  <div class="container">
+    <aside>
+      侧边栏
+    </aside>
+    <div class="main dib">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id, pariatur porro ipsa impedit quaerat ea repudiandae doloribus saepe, praesentium in hic repellat quis, accusamus temporibus. Eum rem recusandae suscipit possimus?
+    </div>
+  </div>
+  <h2>5. 利用table盒创建BFC</h2>
+  <p><code>display: table;</code>盒子会适应内容; 并且内容过多时，会导致高度设置失效</p>
+  <div class="container">
+    <aside>
+      侧边栏
+    </aside>
+    <div class="main dt">
+      Lorem ipsum .
+    </div>
+  </div>
+  <div class="container">
+    <aside>
+      侧边栏
+    </aside>
+    <div class="main dt">
+      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cum ipsa officia iusto amet, suscipit tenetur repellat libero consectetur debitis facilis ut quasi, impedit harum, dolor praesentium ipsam vel officiis quod?
+    </div>
+  </div>
+</body>
+</html>

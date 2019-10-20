@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>盒百分比尺寸测试</title>
+  <style>
+  .container {
+    border: 2px solid;
+    padding: 50px;
+    width: 400px;
+    height: 500px;
+    background-color: #008c8c;
+    background-clip: content-box;
+  }
+  .content {
+    border: 2px solid lightcoral;
+    padding: 20px;
+    text-align: center;
+    color: #fff;
+    background-color: lightcoral;
+    background-clip: content-box;
+  }
+  .c1 .content {
+    margin-top: 50%;
+    margin-left: 50%;
+    padding-top: 50%;
+    padding-left: 50%;
+    width: 50%;
+  }
+  .c2 {
+    height: auto;
+  }
+  .c3 {
+    height: 300px;
+  }
+  .c2 .content {
+    height: 50%;
+    width: 50%;
+  }
+  .c3 .content {
+    height: 50%;
+  }
+  </style>
+</head>
+<body>
+  <h2>百分比相对于包含块宽度</h2>
+  <div class="container c1">
+    <div class="content">
+      margin、padding、宽度，百分比相对于其包含块的<strong>宽度</strong>
+    </div>
+  </div>
+  <h2>高度百分比失效</h2>
+  <div class="container c2">
+    <div class="content">
+      包含块适应内容高度时，高度百分比失效
+    </div>
+  </div>
+  <h2>高度百分比</h2>
+  <div class="container c3">
+    <div class="content">
+      包含块固定高度时，高度百分比相对于其包含块的高度
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>containing block test</title>
+  <style>
+  .container {
+    border: 2px solid;
+    padding: 50px;
+    background-color: #008c8c;
+    background-clip: content-box;
+  }
+  .content {
+    border: 2px solid lightcoral;
+    padding: 20px;
+    text-align: center;
+    color: #fff;
+    background-color: lightcoral;
+    background-clip: content-box;
+  }
+  .c1 {
+    height: 150px;
+  }
+  .c2 {
+    height: 200px;
+  }
+  .c3 {
+    height: 100px;
+  }
+  .c4 {
+    height: 200px;
+  }
+  .c5 {
+    margin: 0 auto;
+    width: 500px;
+    height: 200px;
+  }
+  .c1 .content {
+    line-height: 50px;
+  }
+  .c2 .content {
+    width: 300px;
+    height: 150px;
+  }
+  .c3 .content {
+    margin: 0 auto;
+  }
+  .c4 .content {
+    margin: 0 auto;
+    width: 200px;
+  }
+  .c5 .content {
+    margin-left: -100px;
+    margin-right: -100px;
+  }
+  </style>
+</head>
+<body>
+  <h2>横向规则测试: </h2>
+  <h4>宽度 为 auto</h4>
+  <div class="container c1">
+    <div class="content">
+        宽度的默认值是auto: 将剩余空间吸收掉
+    </div>
+  </div>
+  <h4>margin 为 0</h4>
+  <div class="container c2">
+    <div class="content">
+      margin的默认值为0, 
+      若width、padding、border、margin计算后，仍然有剩余空间，该剩余空间被margin-right全部吸收
+      （文档从右向左排列时，margin-left吸收剩余空间）
+
+    </div>
+  </div>
+  <h4>width 为auto 并且 margin 为 auto</h4>
+  <div class="container c3">
+    <div class="content">
+        width 为auto 并且 margin 为 auto.
+        margin: auto; 表示将剩余空间吸收掉，其吸收能力小于宽度
+    </div>
+  </div>
+  <h4>margin 为 auto ，其他都定值</h4>
+  <div class="container c4">
+    <div class="content">
+        margin 为 auto ，其他都定值。margin吸收空间的能力被显示出来。
+        margin-left 与 margin-right 吸收能力相同，表现为居中
+    </div>
+  </div>
+  <h4>margin 为 负值 ，宽度默认</h4>
+  <div class="container c5">
+    <div class="content">
+        margin 为 负值 ，宽度默认, 宽度会将由于margin负值导致的过多剩余空间全部吸收掉
+    </div>
+  </div>
+</body>
+</html>

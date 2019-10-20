@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>margin 合并问题</title>
+  <style>
+  .block1, .block2 {
+    border: 2px solid;
+    padding: 10px;
+  }
+  .block1 {
+    margin-bottom: 20px;
+  }
+  .block2 {
+    margin-top: 30px;
+  }
+  .parent {
+    margin-top: 50px;
+    width: 500px;
+    height: 200px;
+    background-color: #008c8c;
+  }
+  .child {
+    margin-top: 40px;
+    width: 400px;
+    height: 150px;
+    background-color: lightcoral;
+  }
+  </style>
+
+</head>
+<body>
+  <h2>上下两个兄弟元素margin相邻，发生合并，取最大外边距</h2>
+  <div class="block1">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium optio laboriosam animi maiores quae molestias deserunt odio iure quod culpa qui officiis illo, obcaecati sed amet at. Libero, consequatur adipisci.</div>
+  <div class="block2">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deserunt similique libero mollitia, et officiis quia facere ut aliquid nam velit tempore maxime explicabo cumque recusandae, exercitationem quas, tenetur quisquam eum!</div>
+  <h2>父子元素margin相邻，发生合并(有的对这种情况叫做margin塌陷)</h2>
+  <div class="parent">
+    <div class="child">Lorem ipsum dolor, sit amet consectetur adipisicing elit. In, cum. Veritatis porro cum obcaecati, facilis quasi voluptate temporibus, praesentium, dolores tempora molestias corrupti soluta! Et ex obcaecati recusandae alias quia?</div>
+  </div>
+</body>
+</html>

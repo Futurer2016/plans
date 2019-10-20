@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>flash-test</title>
+</head>
+<body>
+  <object data="./sample.swf" type="application/x-shockwave-flash">
+    <!-- 通用参数：画面质量参数 -->
+    <param name="quality" value="high">
+  </object>
+
+  <embed quality="high" src="./sample.swf" type="application/x-shockwave-flash">
+
+    <!-- 兼容的写法 -->
+  <object data="./sample.swf" type="application/x-shockwave-flash">
+    <!-- 通用参数：画面质量参数 -->
+    <param name="quality" value="high">
+    <!-- object被识别时，由于object不允许存在embed元素，所以不会识别embed。不识别object时，可以识别embed元素 -->
+    <embed quality="high" src="./sample.swf" type="application/x-shockwave-flash">
+  </object>
+</body>
+</html>

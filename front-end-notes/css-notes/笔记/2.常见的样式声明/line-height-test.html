@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>行高探究</title>
+  <style>
+  .p1 {
+    font-size: 40px;
+  }
+  .p2 {
+    font-size: 14px;
+  }
+  .c1 {
+    line-height: 30px;
+  }
+  .c2 {
+    line-height: 2em;
+  }
+  .c3 {
+    line-height: 200%;
+  }
+  .c4 {
+    line-height: 2;
+  }
+  </style>
+</head>
+<body>
+  <h1>探究行高的细则</h1>
+  <p>行高的相对大小，对于本元素来说是相对于本元素的字体大小,即如果字体大小为12px,行高为2em, 则行高最后计算的结果为28px</p>
+  <p>但行高在父元素定义，并继承给后代元素时会出现一些问题，如下：</p>
+  <h2>1. 固定行高</h2>
+  <p>在文本过大时固定的行高会使文字发生重叠，文本小时文字距离又太大</p>
+  <div class="container c1">
+    <p class="p1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque cum vel fugiat hic delectus animi quam. Officia recusandae deserunt consequuntur provident architecto magnam, minus ut illo non, explicabo, nam cum!</p>
+    <p class="p2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus quam numquam perferendis, totam deserunt vitae, corrupti fuga cupiditate in itaque quae hic, a mollitia dolorum quia repellat recusandae esse est.</p>
+  </div>
+  <h2>2. 设置em单位的相对行高</h2>
+  <p>em单位的，将会先计算像素值，再继承, 即2em会先转换成像素值16*2=32px，再继承到p1、p2</p>
+  <div class="container c2">
+    <p class="p1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque cum vel fugiat hic delectus animi quam. Officia recusandae deserunt consequuntur provident architecto magnam, minus ut illo non, explicabo, nam cum!</p>
+    <p class="p2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus quam numquam perferendis, totam deserunt vitae, corrupti fuga cupiditate in itaque quae hic, a mollitia dolorum quia repellat recusandae esse est.</p>
+  </div>
+  <h2>3. 设置百分比行高</h2>
+  <p>百分比的，将会先计算像素值，再继承, 即200%会先转换成像素值16*2=32px，再继承到p1、p2
+  </p>
+  <div class="container c3">
+    <p class="p1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque cum vel fugiat hic delectus animi quam. Officia recusandae deserunt consequuntur provident architecto magnam, minus ut illo non, explicabo, nam cum!</p>
+    <p class="p2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus quam numquam perferendis, totam deserunt vitae, corrupti fuga cupiditate in itaque quae hic, a mollitia dolorum quia repellat recusandae esse est.</p>
+  </div>
+  <h2>4. 设置数值行高</h2>
+  <p>数值的，将会先继承, 再计算像素值，即200%会先被p1、p2继承, 再转换成像素值40*2=80px  、 14*2=28px</p>
+  <div class="container c4">
+    <p class="p1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque cum vel fugiat hic delectus animi quam. Officia recusandae deserunt consequuntur provident architecto magnam, minus ut illo non, explicabo, nam cum!</p>
+    <p class="p2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus quam numquam perferendis, totam deserunt vitae, corrupti fuga cupiditate in itaque quae hic, a mollitia dolorum quia repellat recusandae esse est.</p>
+  </div>
+
+  </body>
+</html>

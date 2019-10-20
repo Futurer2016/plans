@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>文字字体大小测试</title>
+  <style>
+  i, em {
+    font-style: normal;
+  }
+  p {
+    position: relative;
+    font-family: consolas;
+    font-size: 32px;
+    background-color: lightcoral;
+  }
+  p span {
+    font-size: 200px;
+    background-color: lightblue;
+  }
+  p span i {
+    font-size: 64px;
+    background-color:lime;
+  }
+  p span em {
+    font-size: 24px;
+    background-color: maroon;
+  }
+  p label i {
+    font-size: 32px;
+    background-color:lime;
+  }
+  p label {
+    font-size: 5em;
+    background-color: lightseagreen;
+  }
+  p::before {
+    position: absolute;
+    font-size: 12px;
+    text-align: right;
+    color: #fff;
+    border-top: 1px solid;
+    width: 100%;
+  }
+  .p1::before {
+    content: "基线";
+    top: 166px;
+  }
+  .p1 span {
+    vertical-align: baseline;
+  }
+  .p1 label {
+    vertical-align: baseline;
+  }
+
+  .p2::before {
+    content: "上基线";
+    top: 166px;
+  }
+  .p2 span {
+    vertical-align: super;
+  }
+  .p2 label {
+    vertical-align: super;
+  }
+
+  .p3::before {
+    content: "下基线";
+    top: 166px;
+  }
+  .p3 span {
+    vertical-align: sub;
+  }
+  .p3 label {
+    vertical-align: sub;
+  }
+
+  .p4::before {
+    content: "底线+line gap";
+    top: 234px;
+  }
+  .p4 span {
+    vertical-align: text-bottom;
+  }
+  .p4 label {
+    vertical-align: text-bottom;
+  }
+
+  .p5::before {
+    content: "顶线+line gap";
+    top: 0;
+    border-color: #000;
+  }
+  .p5 span {
+    vertical-align: text-top;
+  }
+  .p5 label {
+    vertical-align: text-top;
+  }
+
+  .p6::before {
+    content: "x中线";
+    top: 117px;
+  }
+  .p6 span {
+    vertical-align: middle;
+  }
+  .p6 label {
+    vertical-align: middle;
+  }
+
+  .p7::before {
+    content: "整行的顶边线,带有line gap";
+    top: 0;
+    border-color: #000;
+  }
+  .p7::after {
+    content: "子元素与父元素基线";
+    position: absolute;
+    left: 0;
+    top: 52px;
+    border-top: 1px solid;
+    width: 100%;
+    font-size: 14px;
+    text-align: right;
+    color: #fff;
+  }
+  .p7 span {
+    vertical-align: top;
+  }
+  .p7 label {
+    vertical-align: top;
+  }
+  .p8::before {
+    content: "整行的底边线,带有line gap";
+    top: 234px;
+    color: #000;
+  }
+  .p8::after {
+    content: "子元素与父元素基线";
+    position: absolute;
+    left: 0;
+    top: 212px;
+    border-top: 1px solid;
+    width: 100%;
+    font-size: 14px;
+    text-align: right;
+    color: #fff;
+  }
+  .p8 span {
+    vertical-align: bottom;
+  }
+  .p8 label {
+    vertical-align: bottom;
+  }
+  </style>
+</head>
+<body>
+  <p class="p1">
+    <span>M</span>
+    <label>M</label>
+    M文本基线对齐
+  </p>
+  <p class="p2">
+    <span>M</span>
+    <label>M</label>
+    M子元素的基线与父元素的上基线对齐
+  </p>
+  <p class="p3">
+    <span>M</span>
+    <label>M</label>
+    M子元素的基线与父元素的下基线对齐
+  </p>
+  <p class="p4">
+      <span>
+        M
+        <i>I</i>
+      </span>
+      <label>
+        M
+        <i>I</i>
+      </label>
+    M文本行高底线对齐,Aligns the bottom of the element with the bottom of the parent element's font.
+  </p>
+  <p class="p5">
+      <span>
+        M
+        <i>I</i>
+      </span>
+      <label>
+        M
+        <i>I</i>
+      </label>
+    M文本行高顶线对齐,Aligns the top of the element with the top of the parent element's font.
+  </p>
+  <p class="p6">
+      <span>M</span>
+      <label>M</label>
+    x文本中线对齐,Aligns the middle of the element with the baseline plus half the x-height of the parent
+  </p>
+  <p class="p7">
+      <span>
+        M
+        <i>I <em>Em</em> </i>
+      </span>
+      <label>
+        M
+        <i>I</i>
+      </label>
+    M 元素的后代元素与父元素文本对齐，然后再与元素本身顶部对齐。
+  </p>
+  <p class="p8">
+    <span>
+      M
+      <i>I <em>Em</em> </i>
+    </span>
+    <label>
+      M
+      <i>I</i>
+    </label>
+    M 元素的后代元素与父元素文本对齐，然后再与元素本身底部对齐。
+  </p>
+</body>
+</html>

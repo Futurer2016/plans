@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>layout-demo</title>
+  <style>
+  body {
+    margin: 0;
+    padding-bottom: 400px;
+    color: #424242;
+  }
+  .clearfix::after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+  .container {
+    color: #eee;
+    background-color: lightblue;
+  }
+  .container .aside {
+    width: 200px;
+    background-color: lightcoral;
+  }
+  .container .main {
+    background-color: lightcoral;
+  }
+  .c1 {
+    overflow: hidden;
+  }
+  .c1 .aside {
+    float: left;
+    height: 1000px;
+    margin-bottom: -990px;
+    overflow: hidden auto;
+  }
+  .c1 .main {
+    margin-left: 210px;
+  }
+  .c2 .aside {
+    float: left;
+  }
+  .c2 .main {
+    padding-left: 210px;
+    background-clip: content-box;
+  }
+  .c3 .aside {
+    float: left;
+    margin-right: 10px;
+  }
+  .c3 .main {
+    overflow: hidden;
+  }
+  .c4 {
+    position: relative;
+  }
+  .c4 .aside {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    overflow: hidden auto;
+  }
+  .c4 .main {
+    margin-left: 210px;
+  }
+  .c5 {
+    position: relative;
+  }
+  .c5 .aside {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    overflow: hidden auto;
+  }
+  .c5 .main {
+    padding-left: 210px;
+    height: 100%;
+    background-clip: content-box;
+  }
+  .container .left {
+    width: 200px;
+    background-color: lightcoral;
+  }
+  .container .right {
+    width: 300px;
+    background-color: lightcoral;
+  }
+  .t1 .left {
+    float: left;
+  }
+  .t1 .right {
+    float: right;
+  }
+  .t1 .main {
+    margin: 0 310px 0 210px;
+  }
+  .t2 .left {
+    float: left;
+  }
+  .t2 .right {
+    float: right;
+  }
+  .t2 .main {
+    padding: 0 310px 0 210px;
+    background-clip: content-box;
+  }
+  .t3 .left {
+    float: left;
+    margin-right: 10px;
+  }
+  .t3 .right {
+    float: right;
+    margin-left: 10px;
+  }
+  .t3 .main {
+    overflow: hidden auto;
+  }
+  .t4 {
+    position: relative;
+  }
+  .t4 .left,
+  .t4 .right {
+    position: absolute;
+    top: 0;
+    height: 100%;
+  }
+  .t4 .left {
+    left: 0;
+  }
+  .t4 .right {
+    right: 0;
+  }
+  .t4 .main {
+    margin: 0 310px 0 210px;
+  }
+  .t5 {
+    position: relative;
+  }
+  .t5 .left,
+  .t5 .right {
+    position: absolute;
+    top: 0;
+    height: 100%;
+  }
+  .t5 .left {
+    left: 0;
+  }
+  .t5 .right {
+    right: 0;
+  }
+  .t5 .main {
+    padding: 0 310px 0 210px;
+    background-clip: content-box;
+  }
+  </style>
+</head>
+<body>
+  <h1>常见的布局方式</h1>
+  <h2>两栏布局</h2>
+  <h3>1. 浮动+margin 两栏 + 侧边栏伪等高(侧边栏数据过多时，会导致显示问题,overflow: scroll;也失效, container 也不能设置padding, 否则就露馅了)</h3>
+  <div class="container clearfix c1">
+    <div class="aside">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto culpa amet cum molestiae repudiandae vero incidunt, minima facere temporibus sapiente aliquid maiores provident adipisci enim fugiat eveniet deleniti praesentium commodi!
+    </div>
+    <div class="main">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam corporis maxime voluptatem reprehenderit provident dolore inventore vitae voluptas culpa assumenda itaque perspiciatis, facere eligendi iure nulla. Expedita cumque praesentium tempora!
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati aspernatur quos sunt quo? Voluptatem similique aut officia doloribus molestiae ex exercitationem at neque non soluta! Maxime iusto dolores culpa veniam!
+    </div>
+  </div>
+  <h3>2. 浮动+padding 两栏</h3>
+  <div class="container clearfix c2">
+    <div class="aside">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto culpa amet cum molestiae repudiandae vero incidunt, minima facere temporibus sapiente aliquid maiores provident adipisci enim fugiat eveniet deleniti praesentium commodi!
+    </div>
+    <div class="main">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam corporis maxime voluptatem reprehenderit provident dolore inventore vitae voluptas culpa assumenda itaque perspiciatis, facere eligendi iure nulla. Expedita cumque praesentium tempora!
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati aspernatur quos sunt quo? Voluptatem similique aut officia doloribus molestiae ex exercitationem at neque non soluta! Maxime iusto dolores culpa veniam!
+    </div>
+  </div>
+  <h3>3. 浮动+overflow 两栏</h3>
+  <div class="container clearfix c3">
+    <div class="aside">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto culpa amet cum molestiae repudiandae vero incidunt, minima facere temporibus sapiente aliquid maiores provident adipisci enim fugiat eveniet deleniti praesentium commodi!
+    </div>
+    <div class="main">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam corporis maxime voluptatem reprehenderit provident dolore inventore vitae voluptas culpa assumenda itaque perspiciatis, facere eligendi iure nulla. Expedita cumque praesentium tempora!
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati aspernatur quos sunt quo? Voluptatem similique aut officia doloribus molestiae ex exercitationem at neque non soluta! Maxime iusto dolores culpa veniam!
+    </div>
+  </div>
+  <h3>4. absolute+margin 两栏 + 侧边栏等高(由主区域内容决定高度)</h3>
+  <div class="container c4">
+    <div class="aside">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto culpa amet cum molestiae repudiandae vero incidunt, minima facere temporibus sapiente aliquid maiores provident adipisci enim fugiat eveniet deleniti praesentium commodi!
+    </div>
+    <div class="main">
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cum maxime neque quo beatae voluptatibus reiciendis voluptas corporis nostrum, quasi excepturi alias ex voluptatum natus consectetur culpa fuga quidem maiores aliquid non et incidunt magni veniam modi! Itaque quos eos sapiente saepe et corrupti incidunt consequuntur aperiam aliquam tempora eaque quo nobis voluptates ratione totam repudiandae, recusandae inventore esse cum? Maxime consectetur voluptatum voluptate at minus voluptas deleniti hic. Officia, facere eum praesentium veritatis iure doloremque, aut, impedit quaerat et nemo quo! Quia, accusamus nobis quaerat minus eaque vitae aliquid perspiciatis enim inventore sequi molestiae! Inventore, consequuntur quaerat tempore dolor debitis dicta suscipit facilis molestiae animi quam neque quibusdam quae exercitationem ut voluptates aliquam obcaecati nihil repellat cumque minus corporis ipsa. Nisi, sed? Ipsam fugit doloribus dolores voluptate laudantium eos vel architecto soluta tempore. Quisquam in optio nesciunt pariatur quas porro, quasi, voluptatum adipisci sapiente accusamus nostrum est exercitationem repellendus ut neque dicta voluptas veniam facilis perferendis sit consequuntur animi? Vero, temporibus repudiandae. Neque expedita, aspernatur a aliquam, minima et dolore perferendis aut, molestias autem dolor laudantium consectetur libero illum? Iusto cupiditate fugit eligendi excepturi facilis minima veritatis quisquam facere consectetur velit. Harum cumque doloremque, ab obcaecati dolores vel aperiam maiores?
+    </div>
+  </div>
+  <h4>侧边栏在下</h4>
+  <div class="container c4">
+    <div class="main">
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cum maxime neque quo beatae voluptatibus reiciendis voluptas corporis nostrum, quasi excepturi alias ex voluptatum natus consectetur culpa fuga quidem maiores aliquid non et incidunt magni veniam modi! Itaque quos eos sapiente saepe et corrupti incidunt consequuntur aperiam aliquam tempora eaque quo nobis voluptates ratione totam repudiandae, recusandae inventore esse cum? Maxime consectetur voluptatum voluptate at minus voluptas deleniti hic. Officia, facere eum praesentium veritatis iure doloremque, aut, impedit quaerat et nemo quo! Quia, accusamus nobis quaerat minus eaque vitae aliquid perspiciatis enim inventore sequi molestiae! Inventore, consequuntur quaerat tempore dolor debitis dicta suscipit facilis molestiae animi quam neque quibusdam quae exercitationem ut voluptates aliquam obcaecati nihil repellat cumque minus corporis ipsa. Nisi, sed? Ipsam fugit doloribus dolores voluptate laudantium eos vel architecto soluta tempore. Quisquam in optio nesciunt pariatur quas porro, quasi, voluptatum adipisci sapiente accusamus nostrum est exercitationem repellendus ut neque dicta voluptas veniam facilis perferendis sit consequuntur animi? Vero, temporibus repudiandae. Neque expedita, aspernatur a aliquam, minima et dolore perferendis aut, molestias autem dolor laudantium consectetur libero illum? Iusto cupiditate fugit eligendi excepturi facilis minima veritatis quisquam facere consectetur velit. Harum cumque doloremque, ab obcaecati dolores vel aperiam maiores?
+    </div>
+    <div class="aside">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto culpa amet cum molestiae repudiandae vero incidunt, minima facere temporibus sapiente aliquid maiores provident adipisci enim fugiat eveniet deleniti praesentium commodi!
+    </div>
+  </div>
+  <h3>5. absolute+padding 两栏(padding 是不建议的方式，绝对定位的包含块是main的填充盒, 将需要额外处理)</h3>
+  <div class="container c5">
+    <div class="aside">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto culpa amet cum molestiae repudiandae vero incidunt, minima facere temporibus sapiente aliquid maiores provident adipisci enim fugiat eveniet deleniti praesentium commodi!
+    </div>
+    <div class="main">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam corporis maxime voluptatem reprehenderit provident dolore inventore vitae voluptas culpa assumenda itaque perspiciatis, facere eligendi iure nulla. Expedita cumque praesentium tempora!
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati aspernatur quos sunt quo? Voluptatem similique aut officia doloribus molestiae ex exercitationem at neque non soluta! Maxime iusto dolores culpa veniam!
+    </div>
+  </div>
+  <h4>侧边栏在下</h4>
+  <div class="container c5">
+    <div class="main">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam corporis maxime voluptatem reprehenderit provident dolore inventore vitae voluptas culpa assumenda itaque perspiciatis, facere eligendi iure nulla. Expedita cumque praesentium tempora!
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati aspernatur quos sunt quo? Voluptatem similique aut officia doloribus molestiae ex exercitationem at neque non soluta! Maxime iusto dolores culpa veniam!
+    </div>
+    <div class="aside">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto culpa amet cum molestiae repudiandae vero incidunt, minima facere temporibus sapiente aliquid maiores provident adipisci enim fugiat eveniet deleniti praesentium commodi!
+    </div>
+  </div>
+  <h2>三栏布局</h2>
+  <h3>1. 浮动+margin 三栏</h3>
+  <div class="container t1 clearfix">
+    <div class="left">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quam odit quod eligendi, repellendus ut laborum! Veniam tempore exercitationem eveniet excepturi porro perferendis alias adipisci, fugit ipsam iure incidunt inventore id!</div>
+    <div class="right">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa nemo tempore quisquam, quibusdam quasi, nesciunt sequi quo exercitationem, in vel non aliquam. Saepe, velit omnis. In optio voluptates animi vel?</div>
+    <div class="main">Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic qui adipisci a, beatae optio numquam laborum facilis ex deserunt harum distinctio inventore aliquam laboriosam? Distinctio cum id libero earum nostrum maxime magnam excepturi, commodi quam labore debitis doloribus fugiat deleniti reiciendis laborum porro magni numquam accusantium veniam nemo accusamus et quaerat suscipit voluptatibus? Vel explicabo ratione temporibus veniam hic obcaecati dolore sit voluptate sapiente provident excepturi cum, earum aliquam saepe omnis officia quasi libero laudantium reprehenderit a corporis repellat quaerat. Quam, at voluptatum ad quod ex, eos veniam consectetur inventore sequi consequatur eveniet! Quae aspernatur necessitatibus nihil sit velit quos?</div>
+  </div>
+  <h3>2. 浮动+padding 三栏(padding 是不建议的方式，绝对定位的包含块是main的填充盒, 将需要额外处理)</h3>
+  <div class="container t2 clearfix">
+    <div class="left">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quam odit quod eligendi, repellendus ut laborum! Veniam tempore exercitationem eveniet excepturi porro perferendis alias adipisci, fugit ipsam iure incidunt inventore id!</div>
+    <div class="right">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa nemo tempore quisquam, quibusdam quasi, nesciunt sequi quo exercitationem, in vel non aliquam. Saepe, velit omnis. In optio voluptates animi vel?</div>
+    <div class="main">Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic qui adipisci a, beatae optio numquam laborum facilis ex deserunt harum distinctio inventore aliquam laboriosam? Distinctio cum id libero earum nostrum maxime magnam excepturi, commodi quam labore debitis doloribus fugiat deleniti reiciendis laborum porro magni numquam accusantium veniam nemo accusamus et quaerat suscipit voluptatibus? Vel explicabo ratione temporibus veniam hic obcaecati dolore sit voluptate sapiente provident excepturi cum, earum aliquam saepe omnis officia quasi libero laudantium reprehenderit a corporis repellat quaerat. Quam, at voluptatum ad quod ex, eos veniam consectetur inventore sequi consequatur eveniet! Quae aspernatur necessitatibus nihil sit velit quos?</div>
+  </div>
+  <h3>3. 浮动+overflow 三栏</h3>
+  <div class="container t3 clearfix">
+    <div class="left">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quam odit quod eligendi, repellendus ut laborum! Veniam tempore exercitationem eveniet excepturi porro perferendis alias adipisci, fugit ipsam iure incidunt inventore id!</div>
+    <div class="right">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa nemo tempore quisquam, quibusdam quasi, nesciunt sequi quo exercitationem, in vel non aliquam. Saepe, velit omnis. In optio voluptates animi vel?</div>
+    <div class="main">Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic qui adipisci a, beatae optio numquam laborum facilis ex deserunt harum distinctio inventore aliquam laboriosam? Distinctio cum id libero earum nostrum maxime magnam excepturi, commodi quam labore debitis doloribus fugiat deleniti reiciendis laborum porro magni numquam accusantium veniam nemo accusamus et quaerat suscipit voluptatibus? Vel explicabo ratione temporibus veniam hic obcaecati dolore sit voluptate sapiente provident excepturi cum, earum aliquam saepe omnis officia quasi libero laudantium reprehenderit a corporis repellat quaerat. Quam, at voluptatum ad quod ex, eos veniam consectetur inventore sequi consequatur eveniet! Quae aspernatur necessitatibus nihil sit velit quos?</div>
+  </div>
+  <h3>4. absolute+margin 三栏</h3>
+  <div class="container t4">
+    <div class="left">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quam odit quod eligendi, repellendus ut laborum! Veniam tempore exercitationem eveniet excepturi porro perferendis alias adipisci, fugit ipsam iure incidunt inventore id!</div>
+    <div class="right">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa nemo tempore quisquam, quibusdam quasi, nesciunt sequi quo exercitationem, in vel non aliquam. Saepe, velit omnis. In optio voluptates animi vel?</div>
+    <div class="main">Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic qui adipisci a, beatae optio numquam laborum facilis ex deserunt harum distinctio inventore aliquam laboriosam? Distinctio cum id libero earum nostrum maxime magnam excepturi, commodi quam labore debitis doloribus fugiat deleniti reiciendis laborum porro magni numquam accusantium veniam nemo accusamus et quaerat suscipit voluptatibus? Vel explicabo ratione temporibus veniam hic obcaecati dolore sit voluptate sapiente provident excepturi cum, earum aliquam saepe omnis officia quasi libero laudantium reprehenderit a corporis repellat quaerat. Quam, at voluptatum ad quod ex, eos veniam consectetur inventore sequi consequatur eveniet! Quae aspernatur necessitatibus nihil sit velit quos?</div>
+  </div>
+  <h4>侧边栏在下边</h4>
+  <div class="container t4">
+    <div class="main">Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic qui adipisci a, beatae optio numquam laborum facilis ex deserunt harum distinctio inventore aliquam laboriosam? Distinctio cum id libero earum nostrum maxime magnam excepturi, commodi quam labore debitis doloribus fugiat deleniti reiciendis laborum porro magni numquam accusantium veniam nemo accusamus et quaerat suscipit voluptatibus? Vel explicabo ratione temporibus veniam hic obcaecati dolore sit voluptate sapiente provident excepturi cum, earum aliquam saepe omnis officia quasi libero laudantium reprehenderit a corporis repellat quaerat. Quam, at voluptatum ad quod ex, eos veniam consectetur inventore sequi consequatur eveniet! Quae aspernatur necessitatibus nihil sit velit quos?</div>
+    <div class="left">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quam odit quod eligendi, repellendus ut laborum! Veniam tempore exercitationem eveniet excepturi porro perferendis alias adipisci, fugit ipsam iure incidunt inventore id!</div>
+    <div class="right">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa nemo tempore quisquam, quibusdam quasi, nesciunt sequi quo exercitationem, in vel non aliquam. Saepe, velit omnis. In optio voluptates animi vel?</div>
+  </div>
+  <h3>5. absolute+padding 三栏</h3>
+  <div class="container t5">
+    <div class="left">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quam odit quod eligendi, repellendus ut laborum! Veniam tempore exercitationem eveniet excepturi porro perferendis alias adipisci, fugit ipsam iure incidunt inventore id!</div>
+    <div class="right">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa nemo tempore quisquam, quibusdam quasi, nesciunt sequi quo exercitationem, in vel non aliquam. Saepe, velit omnis. In optio voluptates animi vel?</div>
+    <div class="main">Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic qui adipisci a, beatae optio numquam laborum facilis ex deserunt harum distinctio inventore aliquam laboriosam? Distinctio cum id libero earum nostrum maxime magnam excepturi, commodi quam labore debitis doloribus fugiat deleniti reiciendis laborum porro magni numquam accusantium veniam nemo accusamus et quaerat suscipit voluptatibus? Vel explicabo ratione temporibus veniam hic obcaecati dolore sit voluptate sapiente provident excepturi cum, earum aliquam saepe omnis officia quasi libero laudantium reprehenderit a corporis repellat quaerat. Quam, at voluptatum ad quod ex, eos veniam consectetur inventore sequi consequatur eveniet! Quae aspernatur necessitatibus nihil sit velit quos?</div>
+  </div>
+  <h4>侧边栏在下边</h4>
+  <div class="container t5">
+    <div class="main">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic qui adipisci a, beatae optio numquam laborum facilis ex deserunt harum distinctio inventore aliquam laboriosam? Distinctio cum id libero earum nostrum maxime magnam excepturi, commodi quam labore debitis doloribus fugiat deleniti reiciendis laborum porro magni numquam accusantium veniam nemo accusamus et quaerat suscipit voluptatibus? Vel explicabo ratione temporibus veniam hic obcaecati dolore sit voluptate sapiente provident excepturi cum, earum aliquam saepe omnis officia quasi libero laudantium reprehenderit a corporis repellat quaerat. Quam, at voluptatum ad quod ex, eos veniam consectetur inventore sequi consequatur eveniet! Quae aspernatur necessitatibus nihil sit velit quos?
+    </div>
+    <div class="left">
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quam odit quod eligendi, repellendus ut laborum! Veniam tempore exercitationem eveniet excepturi porro perferendis alias adipisci, fugit ipsam iure incidunt inventore id!
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus vel nesciunt recusandae sequi! Modi id veniam ea dolorum quod voluptas? Exercitationem est modi nobis distinctio facere magnam at, alias culpa.
+    </div>
+    <div class="right">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa nemo tempore quisquam, quibusdam quasi, nesciunt sequi quo exercitationem, in vel non aliquam. Saepe, velit omnis. In optio voluptates animi vel?</div>
+  </div>
+</body>
+</html>

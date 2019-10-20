@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+
+  <h2>video的简洁写法</h2>
+  <video src=""></video>
+
+  <h2>video的全属性写法</h2>
+  <video controls autoplay muted loop src="test.mp4"></video>
+
+  <h2>video针对视频格式的兼容写法</h2>
+  <video controls="controls">
+    <source src="test.mp4">
+    <source src="test.webm">
+    <p>你的浏览器不支持video元素，<a href="https://www.google.cn/intl/zh-CN/chrome/">点击这里</a>下载最新版本的浏览器</p>
+  </video>
+</body>
+</html>

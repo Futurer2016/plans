@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>float 高度坍塌问题</title>
+  <style>
+  .clearfix::after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+  .container {
+    background-color: lightblue;
+  }
+  .container .item {
+    float: left;
+    margin: 5px;
+    width: 250px;
+    height: 20px;
+    text-align: center;
+    color: #eee;
+    background-color: lightcoral;
+  }
+  .bfc1 {
+    float: left;
+  }
+  .pr {
+    position: relative;
+    height: 150px;
+  }
+  .bfc2 {
+    position: absolute;
+  }
+  .bfc3 {
+    overflow: hidden;
+  }
+  .bfc4 {
+    display: table;
+  }
+  .bfc5 {
+    display: inline-block;
+  }
+  </style>
+</head>
+<body>
+  <h2>1. 伪元素clear方法解决高度坍塌(适用于几乎所有情况)</h2>
+  <div class="container clearfix">
+    <div class="item">float: left;</div>
+    <div class="item">float: left;</div>
+    <div class="item">float: left;</div>
+    <div class="item">float: left;</div>
+    <div class="item">float: left;</div>
+    <div class="item">float: left;</div>
+    <div class="item">float: left;</div>
+    <div class="item">float: left;</div>
+    <div class="item">float: left;</div>
+    <div class="item">float: left;</div>
+  </div>
+  <h2>2. BFC方法解决高度坍塌(只适合在特定情况下使用)</h2>
+  <p>创建BFC的元素，它的自动高度需要计算浮动元素</p>
+  <h3>a. 浮动创建BFC,会改变盒子的布局</h3>
+  <div class="clearfix">
+    <div class="container bfc1">
+      <div class="item">float: left;</div>
+      <div class="item">float: left;</div>
+      <div class="item">float: left;</div>
+      <div class="item">float: left;</div>
+      <div class="item">float: left;</div>
+      <div class="item">float: left;</div>
+      <div class="item">float: left;</div>
+      <div class="item">float: left;</div>
+      <div class="item">float: left;</div>
+      <div class="item">float: left;</div>
+    </div>
+  </div>
+  <h3>b. 绝对定位创建BFC,会改变盒子的布局</h3>
+  <div class="pr">
+    <div class="container bfc2">
+      <div class="item">float: left;</div>
+      <div class="item">float: left;</div>
+      <div class="item">float: left;</div>
+      <div class="item">float: left;</div>
+      <div class="item">float: left;</div>
+      <div class="item">float: left;</div>
+      <div class="item">float: left;</div>
+      <div class="item">float: left;</div>
+      <div class="item">float: left;</div>
+      <div class="item">float: left;</div>
+    </div>
+  </div>
+  <h3>c. overflow创建BFC,副作用相对更小一些</h3>
+  <div class="container bfc3">
+    <div class="item">float: left;</div>
+    <div class="item">float: left;</div>
+    <div class="item">float: left;</div>
+    <div class="item">float: left;</div>
+    <div class="item">float: left;</div>
+    <div class="item">float: left;</div>
+    <div class="item">float: left;</div>
+    <div class="item">float: left;</div>
+    <div class="item">float: left;</div>
+    <div class="item">float: left;</div>
+  </div>
+  <h3>d. table盒创建BFC</h3>
+  <div class="container bfc4">
+    <div class="item">float: left;</div>
+    <div class="item">float: left;</div>
+    <div class="item">float: left;</div>
+    <div class="item">float: left;</div>
+    <div class="item">float: left;</div>
+    <div class="item">float: left;</div>
+    <div class="item">float: left;</div>
+    <div class="item">float: left;</div>
+    <div class="item">float: left;</div>
+    <div class="item">float: left;</div>
+  </div>
+  <h3>e. 行块盒创建BFC</h3>
+  <div class="container bfc5">
+    <div class="item">float: left;</div>
+    <div class="item">float: left;</div>
+    <div class="item">float: left;</div>
+    <div class="item">float: left;</div>
+    <div class="item">float: left;</div>
+    <div class="item">float: left;</div>
+    <div class="item">float: left;</div>
+    <div class="item">float: left;</div>
+    <div class="item">float: left;</div>
+    <div class="item">float: left;</div>
+  </div>
+</body>
+</html>

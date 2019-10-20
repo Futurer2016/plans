@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>inline-test</title>
+  <style>
+  body {
+    padding-bottom: 400px;
+  }
+  p, span {
+    border: 1px solid;
+    line-height: 2;
+    background-color: lightblue;
+  }
+  .container {
+    border: 2px solid;
+  }
+  .container img {
+    width: 300px;
+  }
+  .c2 {
+    font-size: 200px;
+  }
+  .c3 {
+    font-size: 200px;
+  }
+  .c3 img {
+    vertical-align: bottom;
+  }
+  .c4 {
+    font-size: 0;
+  }
+  .c5 img {
+    display: block;
+  }
+  </style>
+</head>
+<body>
+  <h2>行盒与块盒对比</h2>
+  <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maiores perspiciatis quis natus fugit, ipsam iure ratione explicabo nisi inventore dolorem, rerum repellat nemo, dicta consequuntur quidem. Eaque error ut neque, molestiae facilis repellat recusandae hic nobis alias incidunt culpa, ex beatae sequi at, quisquam vel. Necessitatibus deleniti provident tenetur distinctio nihil ipsam nobis, velit obcaecati temporibus porro dolore fugiat aliquid vel consequatur, ducimus sapiente, ad perferendis facilis consequuntur. Culpa distinctio corporis, unde id officiis optio quae consequatur corrupti ea facere nobis voluptates minus esse placeat natus soluta odit sequi sunt dolorum fugiat. Ad veritatis culpa necessitatibus quidem magni, dicta tempora.</p>
+  <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro expedita dignissimos reprehenderit numquam distinctio unde doloribus, placeat, voluptate ut, maxime eveniet facilis repellat eaque ad asperiores inventore architecto omnis veritatis fugiat obcaecati! Possimus libero impedit dolores dicta consequuntur! Tempore aperiam consequatur repellendus laudantium perferendis eaque temporibus exercitationem dolores officia provident! Ad repellat expedita hic a earum at? Laudantium ex repellat, ducimus asperiores, eligendi accusantium ipsum sunt ut minima, saepe temporibus dolorem optio in natus reprehenderit voluptates vero recusandae illo excepturi. Corrupti molestias accusamus, laudantium dolore, officia asperiores necessitatibus nostrum possimus dicta explicabo ex quam! Voluptatem error dolorum sed laudantium explicabo!</span>
+  <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro expedita dignissimos reprehenderit numquam distinctio unde doloribus, placeat, voluptate ut, maxime eveniet facilis repellat eaque ad asperiores inventore architecto omnis veritatis fugiat obcaecati! Possimus libero impedit dolores dicta consequuntur! Tempore aperiam consequatur repellendus laudantium perferendis eaque temporibus exercitationem dolores officia provident! Ad repellat expedita hic a earum at? Laudantium ex repellat, ducimus asperiores, eligendi accusantium ipsum sunt ut minima, saepe temporibus dolorem optio in natus reprehenderit voluptates vero recusandae illo excepturi. Corrupti molestias accusamus, laudantium dolore, officia asperiores necessitatibus nostrum possimus dicta explicabo ex quam! Voluptatem error dolorum sed laudantium explicabo!</span>
+  <h2>图片的底部白边</h2>
+  <div class="container">
+    <img src="./img/bg.jpg" alt="">
+  </div>
+  <h2>这回不止底部出现白边，上边也出现了, 文本有没有都是一样的</h2>
+  <div class="container c2">
+    <img src="./img/bg.jpg" alt="">文字A
+  </div>
+  <h2>图片是一个行盒，它的位置与文本存在一定关系</h2>
+  <div class="container c3">
+    <img src="./img/bg.jpg" alt="">文字A
+  </div>
+  <h2>解决办法1：容器的字体大小设置为0</h2>
+  <div class="container c4">
+    <img src="./img/bg.jpg" alt="">
+  </div>
+  <h2>解决办法2：img元素设置为块盒，使其不受文字影响</h2>
+  <div class="container c5">
+    <img src="./img/bg.jpg" alt="">
+  </div>
+</body>
+</html>

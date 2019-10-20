@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>单选多选美化</title>
+  <style>
+  [type=radio] {
+    display: none;
+  }
+  [type=radio]+.radio {
+    display: inline-block;
+    border: 1px solid #999;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  [type=radio]:checked+.radio {
+    position: relative;
+    border: 1px solid #008c8c;
+  }
+  [type=radio]:checked+.radio::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin: auto;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background-color: #008c8c;
+    transform: translate(-50%, -50%);
+  }
+  </style>
+</head>
+<body>
+  
+  <div class="checkbox"></div>
+
+  <label class="radio-item">
+      <input name="gender" type="radio">
+      <div class="radio checked"></div>
+      <span>男</span>
+  </label>
+  <label class="radio-item">
+      <input name="gender" type="radio">
+      <div class="radio checked"></div>
+      <span>女</span>
+  </label>
+  
+</body>
+</html>
