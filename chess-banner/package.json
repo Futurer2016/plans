@@ -5,7 +5,7 @@
   "dependencies": {
     "antd": "^3.25.2",
     "babel-plugin-import": "^1.12.2",
-    "codemirror": "^5.49.2",
+    "codemirror": "^5.58.2",
     "customize-cra": "^0.9.1",
     "htmlparser2": "^4.0.0",
     "js-base64": "^2.5.1",
